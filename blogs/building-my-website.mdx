@@ -1,0 +1,68 @@
+import { useState } from 'react';
+
+# Building My Website 🚀
+
+Welcome to my journey of building a personal website with modern tools!
+
+---
+
+## Why Build a Website?
+
+- To showcase my portfolio
+- To share my thoughts via a blog
+- To experiment with new web technologies
+
+> "The best way to learn is by doing."
+
+---
+
+## Tech Stack
+
+Here are some of the tools I used:
+
+- **Next.js** for the React framework
+- **MDX** for writing content with components
+- **Tailwind CSS** for styling
+- **Vercel** for deployment
+
+---
+
+## Interactive Feature: Like Button
+
+<LikeButton />
+
+---
+
+## Example Code
+
+```jsx
+function LikeButton() {
+  const [likes, setLikes] = useState(0);
+  return (
+    <button onClick={() => setLikes(likes + 1)}>
+      👍 {likes} Like{likes !== 1 ? 's' : ''}
+    </button>
+  );
+}
+```
+
+---
+
+## Lessons Learned
+
+1. Start simple, iterate fast.
+2. Use components for reusable UI.
+3. Deploy early and often.
+
+---
+
+[Learn more about MDX](https://mdxjs.com)
+
+export function LikeButton() {
+  const [likes, setLikes] = useState(0);
+  return (
+    <button style={{ fontSize: '1.2em', padding: '0.5em 1em', background: '#f3f4f6', border: 'none', borderRadius: '6px', cursor: 'pointer' }} onClick={() => setLikes(likes + 1)}>
+      👍 {likes} Like{likes !== 1 ? 's' : ''}
+    </button>
+  );
+} 

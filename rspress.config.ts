@@ -12,6 +12,13 @@ export default defineConfig({
     light: '/rspress-light-logo.png',
     dark: '/rspress-dark-logo.png',
   },
+  builderConfig:{
+    resolve:{
+        alias: {
+          '@components': path.join(__dirname, 'src/components'),
+        },
+    }
+  },
   themeConfig: {
     socialLinks: [
       {

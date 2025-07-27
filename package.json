@@ -2,10 +2,11 @@
   "name": "rspress-src",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "rspress build",
     "dev": "rspress dev",
-    "preview": "rspress preview"
+    "preview": "rspress build && rspress preview"
   },
   "dependencies": {
     "rspress": "^1.40.2",

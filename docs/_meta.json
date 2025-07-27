@@ -4,6 +4,11 @@
     "link": "/guide/",
     "activeMatch": "/guide/"
   },
+    {
+    "text": "Blog",
+    "link": "/blog/",
+    "activeMatch": "/blog/"
+  },
   {
     "text": "Hello world",
     "link": "/hello/",

@@ -1,0 +1,18 @@
+---
+title: "Polyfills: Handling `process` and Node.js Built-ins in the Browser"
+pageType: doc
+category: 'Tooling'
+image: './assets/placeholder.svg?height=300&width=600'
+tags:
+  - Polyfills
+  - Node.js
+  - Browser
+  - Webpack
+excerpt: "Ever seen errors like 'process is not defined' in your browser console? This guide explains why it happens and how to properly polyfill Node.js-specific APIs for browser environments."
+---
+
+# Polyfills: Handling `process` and Node.js Built-ins in the Browser
+
+You're building a web application, you include a useful library from npm, and suddenly your browser console screams `Uncaught ReferenceError: process is not defined`. What's going on?
+
+Many libraries, especially older ones, were written with a Node.js environment in mind, using Node-specific global variables like `process` or built-in modules like `buffer` or `path`. These don't exist in the browser. This post will explain how modern bundlers like Vite and Webpack use polyfills to solve this problem, and what you need to know to configure them correctly.

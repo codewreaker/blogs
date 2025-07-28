@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@rspress/shared':
+        specifier: ^1.45.0
+        version: 1.45.0
       react:
         specifier: ^19.0.0
         version: 19.1.0

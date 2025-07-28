@@ -9,9 +9,10 @@
     "preview": "rspress build && rspress preview"
   },
   "dependencies": {
-    "rspress": "^1.40.2",
+    "@rspress/shared": "^1.45.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "rspress": "^1.40.2"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",

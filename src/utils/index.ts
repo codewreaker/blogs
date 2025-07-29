@@ -9,6 +9,7 @@ export const formatDate = (dateString: string) => {
   })
 }
 
+
 export const getExcerpt = (toc: BlogPost['toc']) => {
   if (toc && toc.length > 0) {
     // Find the first paragraph after the first heading

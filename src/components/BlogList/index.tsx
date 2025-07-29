@@ -1,15 +1,15 @@
-import { FC } from 'react';
-import { usePageData, useNavigate } from 'rspress/runtime';
+import React, { FC } from 'react';
+import { usePageData, useNavigate, Content } from 'rspress/runtime';
 import {
   Badge,
-  LastUpdated,
-  HomeHero,
-  HomeFooter
+  HomeHero
 } from '@theme'
 
 import { formatDate, getExcerpt, getCategory } from '../../utils/index.js';
 import './blog-list.css';
 import type { BlogPost } from 'types/index.js';
+import ReadingTime from '../ReadingTime/index.js';
+
 
 
 const BlogList = () => {
@@ -23,14 +23,16 @@ const BlogList = () => {
 
   const home = siteData.pages.find((page) => page.routePath === '/') as BlogPost;
 
-  const featuredPost = blogPosts[0]; // Most recent post
+  const featuredPost = blogPosts[0] as BlogPost; // Most recent post
   const allPosts = blogPosts.slice(1); // Rest of the posts
 
   const handlePostClick = (post: BlogPost) => {
     navigate(post.routePath);
   };
 
-
+  function generateRandomSeed() {
+    return Math.floor(Math.random() * 1000000);
+  }
   return (
     <>
       <HomeHero routePath={home?.routePath} frontmatter={{ ...home.frontmatter }} />
@@ -43,10 +45,10 @@ const BlogList = () => {
                 onClick={() => handlePostClick(featuredPost)}
                 style={{ cursor: 'pointer' }}
               >
-                <div className="featured-badge">Latest</div>
+                <div className="featured-badge">Latest Post</div>
                 <div className="featured-image">
                   <img
-                    src="/placeholder.svg"
+                    src={`https://picsum.photos/seed/${generateRandomSeed()}/3264/1836`}
                     alt={featuredPost.title || 'Featured post'}
                   />
                 </div>
@@ -56,16 +58,16 @@ const BlogList = () => {
                     <span className="date">
                       {formatDate(new Date().toISOString())}
                     </span>
-                    <span className="read-time">{`${Math.ceil(featuredPost.toc.length / 2)} min read`}</span>
+                    <ReadingTime readingTimeData={featuredPost?.readingTimeData} />
                   </div>
                   <h2 className="featured-title">{featuredPost.title}</h2>
                   <p className="featured-excerpt">{getExcerpt(featuredPost.toc)}</p>
-                  <button className="portfolio-btn">Read Article</button>
                 </div>
               </article>
             )}
             <div className="related-posts">
               <div className="related-grid">
+                <div className="featured-badge">All Posts</div>
                 {allPosts.map((post: BlogPost) => (
                   <article
                     key={post.routePath}
@@ -75,14 +77,14 @@ const BlogList = () => {
                   >
                     <div className="related-image">
                       <img
-                        src="/placeholder.svg"
+                        src={`https://picsum.photos/seed/${post.title}/200/300`}
                         alt={post.title}
                       />
                     </div>
                     <div className="related-content">
                       <div className="post-meta">
                         <span className="category">{getCategory(post.frontmatter)}</span>
-                        <span className="read-time">{`${Math.ceil(post.toc.length / 2)} min read`}</span>
+                        <ReadingTime readingTimeData={post?.readingTimeData} />
                       </div>
                       <h4 className="related-post-title">{post.title}</h4>
                       <p className="related-excerpt">{getExcerpt(post.toc)}</p>

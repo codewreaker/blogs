@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@rspress/shared": "^1.45.0",
+    "@shikijs/transformers": "^3.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "rspress": "^1.40.2"
+    "rspress": "^1.40.2",
+    "rspress-plugin-reading-time": "^0.3.0",
+    "rspress-plugin-sitemap": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",

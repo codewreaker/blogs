@@ -1,13 +1,65 @@
 :root {
-  --rp-c-brand: #ff5e00;
-  --rp-c-brand-dark: #ff704d;
-  --rp-c-brand-darker: #ff704d;
-  --rp-c-brand-light: #ff7524;
-  --rp-c-brand-lighter: #ff7524;
-  --rp-c-link: var(--rp-c-brand);
-  --rp-c-brand-tint: rgba(255, 94, 0, 0.07);
+    /* Background colors - using your dark theme palette */
+    --rp-c-bg: #0e0e11;
+    --rp-c-bg-soft: #18181b;
+    --rp-c-bg-mute: #232329;
+    
+    /* Dividers - subtle variations of your greys */
+    --rp-c-divider: color-mix(in srgb, #232329 70%, white);
+    --rp-c-divider-light: color-mix(in srgb, #232329 30%, white);
+    
+    /* Text colors - using your text color hierarchy */
+    --rp-c-text-1: #fff;
+    --rp-c-text-2: #d3d3cb;
+    --rp-c-text-3: color-mix(in srgb, #d3d3cb 70%, transparent);
+    --rp-c-text-4: color-mix(in srgb, #d3d3cb 40%, transparent);
+    
+    /* Code text colors */
+    --rp-c-text-code: color-mix(in srgb, #ff6a1a 80%, white);
+    --rp-c-text-code-bg: color-mix(in srgb, #232329 60%, #ff6a1a);
+    
+    /* Brand colors - using your primary orange/red palette */
+    --rp-c-brand: #ff6a1a;
+    --rp-c-brand-light: color-mix(in srgb, #ff6a1a 80%, white);
+    --rp-c-brand-lighter: color-mix(in srgb, #ff6a1a 60%, white);
+    --rp-c-brand-dark: #9f2b00;
+    --rp-c-brand-darker: color-mix(in srgb, #9f2b00 80%, black);
+    --rp-c-brand-tint: color-mix(in srgb, #ff6a1a 10%, transparent);
+    
+    /* Gray scale - adapted for dark theme */
+    --rp-c-gray: #8e8e8e;
+    --rp-c-gray-light-1: color-mix(in srgb, #8e8e8e 85%, white);
+    --rp-c-gray-light-2: color-mix(in srgb, #8e8e8e 70%, white);
+    --rp-c-gray-light-3: color-mix(in srgb, #8e8e8e 55%, white);
+    --rp-c-gray-light-4: color-mix(in srgb, #8e8e8e 40%, white);
+    --rp-c-gray-light-5: color-mix(in srgb, #8e8e8e 25%, white);
+    
+    /* Dark colors - using your existing dark palette with variations */
+    --rp-c-dark: #0e0e11;
+    --rp-c-dark-light-1: #18181b;
+    --rp-c-dark-light-2: #232329;
+    --rp-c-dark-light-3: color-mix(in srgb, #232329 85%, white);
+    --rp-c-dark-light-4: color-mix(in srgb, #232329 70%, white);
+    --rp-c-dark-light-5: color-mix(in srgb, #232329 55%, white);
+    
+    /* Background variants using your approach */
+    --rp-c-bg-dark: color-mix(in srgb, #0e0e11 90%, black);
+    --rp-c-bg-darker: color-mix(in srgb, #0e0e11 80%, black);
+    
+    /* Shadow colors with opacity inspired by your theme */
+    --rp-c-shadow: color-mix(in srgb, #ff6a1a 10%, transparent);
+    --rp-c-shadow-strong: color-mix(in srgb, #ff6a1a 18%, transparent);
+    --rp-c-shadow-light: color-mix(in srgb, #ff6a1a 4%, transparent);
+    
+    /* Radius - keeping original values */
+    --rp-radius: 1rem;
+    --rp-radius-small: .5rem;
+    --rp-radius-large: 1.5rem;
+    
+    /* Link color - using your brand dark color */
+    --rp-c-link: #9f2b00;
 }
 
-.dark {
-  --rp-c-link: var(--rp-c-brand-light);
+.rp-reading-time:not(.rspress-doc .rp-reading-time) {
+    display: none;
 }

@@ -13,4 +13,5 @@ export const ReadingTime: React.FC<{readingTimeData: BlogPost['readingTimeData']
     );
 };
 
+
 export default memo(ReadingTime);
